@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PilotAdminController extends Controller
+class WelcomeNoteAdminController extends Controller
 {
     public function __construct()
     {
@@ -18,9 +18,7 @@ class PilotAdminController extends Controller
      */
     public function index()
     {
-        // $driver=RiderDetail::all();
-        // return view('admin.pilot.index')->withDriver($driver);
-        return view('admin.pilot.index');
+       
     }
 
     /**
@@ -30,7 +28,7 @@ class PilotAdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.welcome_notes.create');
     }
 
     /**

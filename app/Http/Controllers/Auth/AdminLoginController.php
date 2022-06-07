@@ -27,7 +27,7 @@ class AdminLoginController extends Controller
     		'email'=>'required|email',
     		'password'=>'required|min:6'
     	]);
-		//dd($a);
+	//	dd(Auth::guard('admin'));
 		//dd(Auth::guard('admin')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember));
     	//attempt to log the user  in
 		
@@ -43,13 +43,13 @@ class AdminLoginController extends Controller
     		return redirect()->back()->withInput($request->only('email','remember'));
     	//not successfull redirect back to login with form data
     }
-	// public function logout( Request $request ){
+	public function logout( Request $request ){
+		//dd("hiii");
+		//dd(Auth::guard('admin'));
+        Auth::guard('admin')->logout();
+    	//$request->session()->invalidate();
+        return redirect('/admin/login');
 
-       
-    //     Auth::guard('admin')->logout();
-    //     //$request->session()->invalidate();
-    //     return redirect('/admin/login');
-
-    //  }
+     }
 	
 }

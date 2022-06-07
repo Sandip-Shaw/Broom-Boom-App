@@ -33,6 +33,8 @@ class RedirectIfAuthenticated
         if ($guard == "admin" && Auth::guard($guard)->check()) {
             return redirect('/adminDashboard');
            }
+
+           
        if (Auth::guard($guard)->check()) {
             return redirect('/home');
            }
