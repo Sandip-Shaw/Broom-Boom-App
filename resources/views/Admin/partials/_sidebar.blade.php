@@ -24,18 +24,18 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
           <span>Users</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <!-- <a class="collapse-item" href="">Add</a> -->
+           
             <a class="collapse-item" href="">List</a>
        </div>
         </div>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
@@ -51,31 +51,31 @@
         </div>
       </li>
 
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCourse" aria-expanded="true" aria-controls="collapseCourse">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Course Management</span>
+          <span>Support</span>
         </a>
         <div id="collapseCourse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="">Add</a>
+            <!-- <a class="collapse-item" href="">Add</a> -->
             <a class="collapse-item" href="">List</a>
          </div>
         </div>
-      </li> -->
+      </li>
 
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegistraion" aria-expanded="true" aria-controls="collapseRegistraion">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Registration</span>
+          <span>Welcome Notes</span>
         </a>
         <div id="collapseRegistraion" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-           
+            <a class="collapse-item" href="{{route('welcome_notes.create')}}">Add</a>
             <a class="collapse-item" href="">List</a>
          </div>
         </div>
-      </li> -->
+      </li>
 
 
 
@@ -83,11 +83,11 @@
 
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Contacts</span></a>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Tables -->
 <!--       <li class="nav-item">
