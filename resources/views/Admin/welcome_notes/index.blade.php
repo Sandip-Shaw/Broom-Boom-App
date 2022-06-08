@@ -1,5 +1,5 @@
 @extends('admin.adminmain')
- @section('title',"WelcomeNote")
+ @section('title',"Welcome Note")
  @section('stylesheets')
 
  	  <link href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
@@ -59,12 +59,29 @@
                     <td><img src="{{asset('/images/welcome/'.$welcomes->image)}}" alt="Park" style="width:25%"></td>
                      
                      <td>{{$welcomes->message}}</td>
-                     <td>{{$welcomes->date}}</td>
+                     <td>{{$welcomes->created_at}}</td>
                      <td>{{$welcomes->active}}</td>
+                      <td><a href="{{route('welcome_notes.edit',$welcomes->note_id)}}"  class="btn"><i class="fas fa-pen"></i></a>
+                          <a href="{{route('welcome_notes.show',$welcomes->note_id)}}" data-toggle="tooltip" title="banner Details" class="btn">
+                          <i class="fas fa-eye"></i> </a> 
+                          <button class="formConfirm" data-form="#frmDelete-{{$welcomes->note_id}}" data-title="Delete banner" data-message="Are you sure, you want to delete?" >
+                          <i title="Delete" style="margin-right: 0;" class="fas fa-trash" aria-hidden="true"></i>
 
+                          </button>
+
+
+                                  {!! Form::open(array(
+                                      'url' => route('admin.welcome_notes.delete', array($welcomes->note_id)),
+                                      'method' => 'get',
+                                      'style' => 'display:none',
+                                      'id' => 'frmDelete-'.$welcomes->note_id
+                                  ))
+                              !!}
+                              {!! Form::submit('Submit') !!}
+                              {!! Form::close() !!}
+                     </td>
                      <!-- <td>{{$welcomes->created_at}}</td> -->
-                    <td> <td>
-
+                    
                   </tr>
                   @endforeach 
                 
@@ -88,7 +105,7 @@
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="frm_title">Delete</h4>
       </div>
-      <div class="modal-body" id="frm_body">Are you sure, you want to delete this Topic ?</div>
+      <div class="modal-body" id="frm_body">Are you sure, you want to delete ?</div>
       <div class="modal-footer">
         <button style='margin-left:10px;' type="button" class="btn btn-danger col-sm-2 pull-right" id="frm_submit">Confirm</button>
         <button type="button" class="btn btn-primary col-sm-2 pull-right" data-dismiss="modal" id="frm_cancel">Cancel</button>
@@ -132,9 +149,9 @@
         $('#formConfirm').find('#frm_submit').attr('data-form', dataForm);
   });
   $('#formConfirm').on('click', '#frm_submit', function(e) {
-        var id = $(this).attr('data-form');
+        var note_id = $(this).attr('data-form');
         //alert(id);
-        $(id).submit();
+        $(note_id).submit();
   });
 });
 

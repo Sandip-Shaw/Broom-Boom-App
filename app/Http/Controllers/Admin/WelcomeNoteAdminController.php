@@ -74,9 +74,11 @@ class WelcomeNoteAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($note_id)
     {
-        //
+        $welcome=WelcomeNotes::find($note_id);
+        //dd( $image);
+        return view('admin.welcome_notes.show')->withWelcome($welcome);
     }
 
     /**
@@ -85,9 +87,11 @@ class WelcomeNoteAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($note_id)
     {
-        //
+        $welcome=WelcomeNotes::find($note_id);
+        
+        return view("admin.welcome_notes.edit")->withWelcome($welcome);
     }
 
     /**
@@ -97,9 +101,33 @@ class WelcomeNoteAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $note_id)
     {
-        //
+        $welcome=WelcomeNotes::find($note_id);
+
+        $variable=$request->toArray();
+        foreach ($variable as $key => $value) {
+           if($key!='_token' & $key!='image_name' & $key!='_method')
+            $welcome->$key=$value;
+        }
+
+        $image=$request->file('image_name');
+        //if($request->hasFile('image_name')){
+        //dd($image);
+        if(isset($image)){
+        $filename='welcome-note'.'-'.rand().time().'.'.$image->getClientOriginalExtension();//part of image intervention library
+        $location=public_path('/images/welcome/'.$filename);
+
+        // use $location='images/'.$filename; on a server
+
+        Image::make($image)->resize(800,600)->save($location);
+        $welcome->image=$filename;
+        }
+        $welcome->save();        
+
+        session::flash('success', 'The Welcome Notes Has Been updated Successfully!');
+        return redirect()->route('welcome_notes.index');
+
     }
 
     /**
@@ -111,5 +139,17 @@ class WelcomeNoteAdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function delete($note_id,Request $request)
+    {   
+      // dd("hii");
+        $welcome=WelcomeNotes::find($note_id);
+        $welcome->delete();
+        $request->session()->flash('success', 'The Welcome Notes has been deleted.');
+        return redirect('/admin/welcome_notes');
+        
+        // dd($request); 
     }
 }
