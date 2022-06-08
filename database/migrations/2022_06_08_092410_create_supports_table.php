@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('welcome_notes', function (Blueprint $table) {
-            $table->bigIncrements('note_id');
-            $table->string('image');
+        Schema::create('supports', function (Blueprint $table) {
+            $table->bigIncrements('ticket_id');
+            $table->string('subject');
             $table->string('message');
-           
-            $table->tinyInteger('active')->default(0);
+            $table->tinyInteger('response_status')->default(0);
+            $table->integer('pilot_id')->unsigned();      
 
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('welcome_notes');
+        Schema::dropIfExists('supports');
     }
 };

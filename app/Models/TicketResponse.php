@@ -5,9 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WelcomeNotes extends Model
+class TicketResponse extends Model
 {
-    // use HasFactory;
-
-    protected $primaryKey = 'note_id';
+    use HasFactory;
 }

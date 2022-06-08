@@ -10,7 +10,7 @@
 <section class="scrollable padder">
 
  			<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-                <li><a href=""><i class="fa fa-home"></i>Home</a></li>>
+                <li><a href="{{url('/admin/welcome_notes/')}}"><i class="fa fa-home"></i>Home</a></li>>
                 <li><a href="">Welcome Notes</a></li>
                 <!-- <li><a href=""></a></li> -->
             </ul>
@@ -20,13 +20,13 @@
                       </header>
 
                       {{Form::open(['route' => 'welcome_notes.store','files' => true, 'class'=>'form-horizontal course-form','data-parsley-validate'])}}
-                      <div class="panel-body">                   
+                      <!-- <div class="panel-body">                   
                          <div class="form-group">
                           <label class="col-sm-3 control-label">Date</label>
                           <div class="col-sm-9">
                             <input type="date" name="date" class="form-control" max="{{date('Y-m-d')}}" data-required="true" placeholder="Date" required>   
                           </div>
-                        </div>
+                        </div> -->
                          <div class="line line-dashed line-lg pull-in"></div>
                         <div class="form-group">
                           <label class="col-sm-3 control-label">Message</label>
@@ -69,7 +69,7 @@
                   <footer class="panel-footer text-right bg-light lter">
                        
                           <input type="submit" class="btn btn-success btn-s-xs" value="Submit"/>
-
+                          <a href="{{url('/admin/welcome_notes/')}}" class="btn btn-danger">Back</a>
                         <!-- <a href="{{url('/admin/course-management')}}" class="btn btn-danger">Cancel</a> -->
                       </footer>
 

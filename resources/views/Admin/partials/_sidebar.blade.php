@@ -59,7 +59,7 @@
         <div id="collapseCourse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <!-- <a class="collapse-item" href="">Add</a> -->
-            <a class="collapse-item" href="">List</a>
+            <a class="collapse-item" href="{{route('support.index')}}">List</a>
          </div>
         </div>
       </li>
