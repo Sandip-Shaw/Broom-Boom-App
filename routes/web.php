@@ -7,6 +7,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\PilotAdminController;
 use App\Http\Controllers\Admin\WelcomeNoteAdminController;
 use App\Http\Controllers\Admin\SupportAdminController;
+use App\Http\Controllers\Admin\TicketResponseAdminController;
+
 
 
 
@@ -36,6 +38,9 @@ Route::prefix('admin')->group(function() {
     Route::get('/logout',[AdminLoginController::class,'logout'])->name('logout');
     Route::resource('welcome_notes', WelcomeNoteAdminController::class);
     Route::resource('support', SupportAdminController::class);
+
+    Route::resource('add-response', TicketResponseAdminController::class);
+
 
 
     Route::get('support/delete/{ticket_id}', [SupportAdminController::class,'delete'])->name('admin.support.delete');

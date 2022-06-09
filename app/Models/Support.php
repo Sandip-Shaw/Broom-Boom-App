@@ -10,4 +10,10 @@ class Support extends Model
    // use HasFactory;
 
    protected $primaryKey = 'ticket_id';
+
+
+   public function tickets(){
+
+      return $this->hasMany(TicketResponse::class,'ticket_id');
+  }
 }

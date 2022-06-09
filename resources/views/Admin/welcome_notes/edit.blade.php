@@ -27,20 +27,31 @@
                             <input type="date" name="date" class="form-control"value="{{$welcome->date}}" max="{{date('Y-m-d')}}" data-required="true" placeholder="Date" required>   
                           </div>
                         </div> -->
-                         <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="panel-body">                   
+                          <div class="form-group">
+                            <label class="col-sm-3 control-label">Title</label>
+                            <div class="col-sm-9">
+                               <input type="text" name="title" class="form-control" value="{{$welcome->title}}" data-required="true" placeholder="Title" required>  
+   
+                            </div>
+                          </div>
+                      <div class="line line-dashed line-lg pull-in"></div>
                         <div class="form-group">
-                          <label class="col-sm-3 control-label">Message</label>
-                          <div class="col-sm-9">
+                            <label class="col-sm-3 control-label">Message</label>
+                            <div class="col-sm-9">
                             <!-- <input type="text" name="description" class="form-control"  data-required="true" placeholder="Description" required> -->  
                             <textarea id="summernote" name="message" class="form-control">{{$welcome->message}}</textarea> 
-                          </div>
+                            </div>
                         </div>
+
                         <div class="panel-body">                   
-                         <div class="form-group">
-                          <label class="col-sm-3 control-label">Active</label>
-                          <div class="col-sm-9">
-                          {!!Form::select('active', array('1' => 'Y', '0' => 'N'),$welcome->active)!!}
-                        </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Active</label>
+                                <div class="col-sm-9">
+                              {!!Form::select('active', array('1' => 'Y', '0' => 'N'),$welcome->active)!!}
+                              </div>
+                            </div>
                         </div> 
                     
                 <!-- <div class="line line-dashed line-lg pull-in"></div>

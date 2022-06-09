@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class TicketResponse extends Model
 {
-    use HasFactory;
+   // use HasFactory;
+   protected $primaryKey = 'response_id';
 }

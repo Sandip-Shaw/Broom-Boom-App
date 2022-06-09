@@ -36,8 +36,9 @@
                       <th>Subject</th>
                       <th>Message</th>
                       <th>Pilot Id</th>
-                     
+                      <th>Date</th>
                       <th>Added On</th>
+                      
                    
                     </tr>
                   </thead>
@@ -46,7 +47,7 @@
                       <th>Subject</th>
                       <th>Message</th>
                       <th>Pilot Id</th>
-                     
+                      <th>Date</th>
                       <th>Added On</th>
                      
                     </tr>
@@ -59,6 +60,8 @@
                      <td>{{$supports->subject}}</td>
                      <td>{{$supports->message}}</td>
                      <td>{{$supports->pilot_id}}</td>
+                     <td>{{$supports->created_by}}</td>
+
                       <td>
                           <a href="{{route('support.show',$supports->ticket_id)}}" data-toggle="tooltip" title="banner Details" class="btn">
                           <i class="fas fa-eye"></i> </a> 
