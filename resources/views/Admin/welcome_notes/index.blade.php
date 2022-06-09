@@ -34,6 +34,7 @@
                   <thead>
                     <tr>
                       <th>Image</th>
+                      <th>Title</th>
                       <th>Message</th>
                       <th>Date</th>
                       <th>Active</th>
@@ -45,6 +46,7 @@
                   <tfoot>
                     <tr>
                       <th>Image</th>
+                      <th>Title</th>
                       <th>Message</th>
                       <th>Date</th>
                       <th>Active</th>
@@ -57,7 +59,7 @@
                     @foreach($welcome as $welcomes)
                   <tr>
                     <td><img src="{{asset('/images/welcome/'.$welcomes->image)}}" alt="Park" style="width:25%"></td>
-                     
+                     <td>{{$welcomes->title}}</td>
                      <td>{{$welcomes->message}}</td>
                      <td>{{$welcomes->created_at}}</td>
                      <td>{{$welcomes->active}}</td>
@@ -80,7 +82,7 @@
                               {!! Form::submit('Submit') !!}
                               {!! Form::close() !!}
                      </td>
-                     <!-- <td>{{$welcomes->created_at}}</td> -->
+                   
                     
                   </tr>
                   @endforeach 

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('welcome_notes', function (Blueprint $table) {
             $table->bigIncrements('note_id');
+            $table->string('title');
             $table->string('image');
             $table->string('message');
            
