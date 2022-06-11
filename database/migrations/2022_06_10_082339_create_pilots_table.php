@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ticket_responses', function (Blueprint $table) {
-            $table->bigIncrements('response_id');
-            $table->string('response_message');
-            $table->integer('ticket_id')->unsigned();      
-            $table->enum('is_reply', [1, 0]);
-            $table->string('responded_by')->nullable();
+        Schema::create('pilots', function (Blueprint $table) {
+            $table->bigIncrements('pilot_id');
+            $table->string('');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ticket_responses');
+        Schema::dropIfExists('pilots');
     }
 };
