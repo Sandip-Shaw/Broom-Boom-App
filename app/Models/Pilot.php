@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Pilot extends Model
 {
     use HasFactory;
+
+    public function pilotdet(){
+
+        return $this->hasOne(PilotDetail::class,'pilot_id');
+    } 
+    public function pilotdoc(){
+
+        return $this->hasOne(PilotDocument::class,'pilot_id');
+    } 
 }

@@ -33,10 +33,10 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Pilot Image</th>
+                     
                       <th>Name</th>
                       <th>Email</th>
-                      <th>Password</th>
+                      
                       <th>Mobile</th>         
                       <th>Added On</th>
                    
@@ -44,17 +44,32 @@
                   </thead>
                   <tfoot>
                     <tr>
-                    <th>Pilot Image</th>
+                    
                       <th>Name</th>
                       <th>Email</th>
-                      <th>Password</th>
+                      
                       <th>Mobile</th>                  
                       <th>Added On</th>
                      
                     </tr>
                   </tfoot>
                   <tbody>
-                  
+                  @foreach($pilots as $pilot)
+                  <tr>
+                
+                     <td>{{$pilot->name}}</td>
+                     <td>{{$pilot->email}}</td>
+                     <td>{{$pilot->mobile}}</td>
+                    
+                      <td>
+                          <a href="{{route('pilot.show',$pilot->id)}}" data-toggle="tooltip" title="banner Details" class="btn">
+                          <i class="fas fa-eye"></i> </a> 
+   
+                     </td>
+                   
+                    
+                  </tr>
+                  @endforeach 
                   
                    
                 

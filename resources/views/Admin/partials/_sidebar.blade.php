@@ -51,18 +51,18 @@
         </div>
       </li>
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCourse" aria-expanded="true" aria-controls="collapseCourse">
           <i class="fas fa-fw fa-folder"></i>
           <span>Support</span>
         </a>
         <div id="collapseCourse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+          <div class="bg-white py-2 collapse-inner rounded"> -->
             <!-- <a class="collapse-item" href="">Add</a> -->
-            <a class="collapse-item" href="{{route('support.index')}}">List</a>
+            <!-- <a class="collapse-item" href="{{route('support.index')}}">List</a>
          </div>
         </div>
-      </li>
+      </li> -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegistraion" aria-expanded="true" aria-controls="collapseRegistraion">

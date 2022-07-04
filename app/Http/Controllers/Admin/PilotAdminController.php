@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pilot;
+use Session;
 
 class PilotAdminController extends Controller
 {
@@ -18,9 +20,9 @@ class PilotAdminController extends Controller
      */
     public function index()
     {
-        // $driver=RiderDetail::all();
-        // return view('admin.pilot.index')->withDriver($driver);
-        return view('admin.pilot.index');
+         $pilot=Pilot::all();
+       
+        return view('admin.pilot.index')->withPilots($pilot);
     }
 
     /**
@@ -52,7 +54,10 @@ class PilotAdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $pilot = Pilot::findOrFail($id);
+        $profile = Pilot::all();
+  //dd($pilot->pilotdet);
+         return view('admin.pilot.show')->withPilots($pilot);
     }
 
     /**
