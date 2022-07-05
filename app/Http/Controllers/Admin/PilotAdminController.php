@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pilot;
+use App\Models\PilotDocument;
+
 use Session;
 
 class PilotAdminController extends Controller
@@ -14,7 +16,7 @@ class PilotAdminController extends Controller
         $this->middleware('auth:admin');
     }
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource.g
      *
      * @return \Illuminate\Http\Response
      */
@@ -80,7 +82,14 @@ class PilotAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       // dd($request);
+        $pilot=PilotDocument::find($id);
+       // dd($pilot);
+        $pilot->verification_status = $request->verification_status;
+        $pilot->save();
+
+        session()->flash('success', 'Verification Status has been Updated !!');
+        return redirect()->route('pilot.index');
     }
 
     /**

@@ -9,5 +9,6 @@ class PilotDocument extends Model
 {
     use HasFactory;
 
-   
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
 }
