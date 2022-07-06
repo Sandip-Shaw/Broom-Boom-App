@@ -71,7 +71,7 @@
                                 $age = Carbon\Carbon::parse($birthday)->diff(Carbon\Carbon::now())->format('%y years, %m months and %d days');
                         @endphp
 
-                                    <p>{{$age}}</p>
+                                <p>{{$age}}</p>
                          
                           </td>
                       </tr>
