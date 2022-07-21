@@ -23,7 +23,7 @@ class WelcomeNoteAdminController extends Controller
     public function index()
     {
         $welcome=WelcomeNotes::all();
-        return view('admin.welcome_notes.index')->withWelcome($welcome);
+        return view('Admin.welcome_notes.index')->withWelcome($welcome);
     }
 
     /**
@@ -33,7 +33,7 @@ class WelcomeNoteAdminController extends Controller
      */
     public function create()
     {
-        return view('admin.welcome_notes.create');
+        return view('Admin.welcome_notes.create');
     }
 
     /**
@@ -78,7 +78,7 @@ class WelcomeNoteAdminController extends Controller
     {
         $welcome=WelcomeNotes::find($note_id);
         //dd( $image);
-        return view('admin.welcome_notes.show')->withWelcome($welcome);
+        return view('Admin.welcome_notes.show')->withWelcome($welcome);
     }
 
     /**
@@ -91,7 +91,7 @@ class WelcomeNoteAdminController extends Controller
     {
         $welcome=WelcomeNotes::find($note_id);
         
-        return view("admin.welcome_notes.edit")->withWelcome($welcome);
+        return view("Admin.welcome_notes.edit")->withWelcome($welcome);
     }
 
     /**

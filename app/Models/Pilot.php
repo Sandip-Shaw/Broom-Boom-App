@@ -9,6 +9,8 @@ class Pilot extends Model
 {
     use HasFactory;
 
+    protected $table = 'pilots';
+
     public function pilotdet(){
 
         return $this->hasOne(PilotDetail::class,'pilot_id');

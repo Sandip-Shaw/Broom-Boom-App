@@ -24,7 +24,7 @@ class SupportAdminController extends Controller
     public function index()
     {
         $support=Support::all();
-        return view('admin.support.index')->withSupport($support);
+        return view('Admin.support.index')->withSupport($support);
     }
 
     /**
@@ -58,7 +58,7 @@ class SupportAdminController extends Controller
     {
         $support=Support::find($ticket_id);
       
-        return view('admin.support.show')->withSupport($support);
+        return view('Admin.support.show')->withSupport($support);
     }
 
     /**

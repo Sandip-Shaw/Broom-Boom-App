@@ -1,6 +1,7 @@
-@extends('admin.adminmain')
+@extends('Admin.adminmain')
  @section('title',"Pilot")
  @section('stylesheets')
+
 
  @endsection
 
@@ -68,7 +69,7 @@
                           <td> 
                         @php
                                 $birthday = $pilots->dob;
-                                $age = Carbon\Carbon::parse($birthday)->diff(Carbon\Carbon::now())->format('%y years, %m months and %d days');
+                                $age = Carbon\Carbon::parse($birthday)->diff(Carbon\Carbon::now())->format('%y years');
                         @endphp
 
                                 <p>{{$age}}</p>
@@ -108,7 +109,7 @@
                           </td>
                       </tr>
                       <tr>
-                          <td class="ft-200" style="width: 250px;">Vehical Type</td>
+                          <td class="ft-200" style="width: 250px;">Vehical</td>
                           <td> 
                           {{ $pilots->pilotdet->vehicle_type}}
                          
@@ -166,56 +167,106 @@
                   <div class="card-body">
                   <table id="dataTable" class="table table-details">
                     <tbody>
-                      <tr>
-                          <td class="ft-200" style="width: 250px;">Driving License</td>
-                          <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->DL_front_image)}}" alt="Park" style="width:30%"></td>
-                          <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->DL_back_image)}}" alt="Park" style="width:30%"></td>
-
-                          <!-- <td>  {{ $pilots->pilotdoc->DL_front_image}}</td> -->
-                           <!-- <td>  {{ $pilots->pilotdoc->DL_back_image}}</td> -->
-                          <td>  {{ $pilots->pilotdoc->DL_number}}</td> 
-                          
-                      </tr>
-                      <tr>
-                          <td class="ft-200" style="width: 250px;">Vehical RC</td>
-                          <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->vehicle_RC_front_image)}}" alt="Park" style="width:30%"></td>
-                          <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->vehicle_RC_back_image)}}" alt="Park" style="width:30%"></td>
-
-
-                          <!-- <td>  {{ $pilots->pilotdoc->vehicle_RC_front_image}}</td>
-                          <td>  {{ $pilots->pilotdoc->vehicle_RC_back_image}}</td> -->
-                          <td>  {{ $pilots->pilotdoc->vehicle_RC_Number}}</td>
-
-                      </tr>
-                      <tr>
+                    <tr>
                           <td class="ft-200" style="width: 250px;">Vehical Type</td>
                           <td> 
 
                          {{ $pilots->pilotdoc->vehicle_type}}
                           
                           </td>
+                          <td>
+
+                        </td>
+                      </tr>
+
+                      <tr>
+                      <td >Driving License</td>
+                      <td></td>
+                      <td><td>
                       </tr>
                       <tr>
-                          <td class="ft-200" style="width: 250px;">Other Document Type</td>
-                          <td> 
+                          <!-- <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->DL_front_image)}}" alt="Park" style="width:30%"></td>
+                          <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->DL_back_image)}}" alt="Park" style="width:30%"></td> -->
 
-                          {{ $pilots->pilotdoc->other_doc_type}}
+                          <!-- <td> <img src="{{$pilots->pilotdoc->DL_front_image}}" alt="Park" style="width:30%"></td> -->
+                          <!-- <td> <img src="{{$pilots->pilotdoc->DL_back_image}}" alt="Park" style="width:30%"></td> -->
+                        <td>
+                              <img src="{{$pilots->pilotdoc->DL_front_image}}" alt="Park" style="width:100%">
+  
+                        </td>
+
+                        <td>
+                              <img src="{{$pilots->pilotdoc->DL_back_image}}" alt="Park" style="width:100%">
+    
+                        </td>
+                          <td>  {{ $pilots->pilotdoc->DL_number}}</td> 
                           
-                          </td>
                       </tr>
-                      <tr>
-                          <td class="ft-200" style="width: 250px;">Other Document</td>
 
-                          <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->other_doc_front_image)}}" alt="Park" style="width:30%"></td>
-                          <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->other_doc_back_image)}}" alt="Park" style="width:30%"></td>
+                      <tr>
+                      <td >Vehical RC</td>
+                      <td></td>
+                      <td><td>
+                      </tr>
+
+                      <tr>
+                          <!-- <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->vehicle_RC_front_image)}}" alt="Park" style="width:30%"></td>
+                          <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->vehicle_RC_back_image)}}" alt="Park" style="width:30%"></td> -->
+
+                          <td> <img src="{{$pilots->pilotdoc->vehicle_RC_front_image}}" alt="Park" style="width:100%"></td>
+                          <td> <img src="{{$pilots->pilotdoc->vehicle_RC_back_image}}" alt="Park" style="width:100%"></td>
+
+                          <!-- <td>  {{ $pilots->pilotdoc->vehicle_RC_front_image}}</td>
+                          <td>  {{ $pilots->pilotdoc->vehicle_RC_back_image}}</td> -->
+                          <td>  {{ $pilots->pilotdoc->vehicle_RC_Number}}</td>
+
+                      </tr>
+
+                      <tr>
+                      <td >Aadhaar Card</td>
+                      <td></td>
+                      <td><td>
+                      </tr>
+
+                      <tr>
+
+
+                          <!-- <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->other_doc_front_image)}}" alt="Park" style="width:30%"></td>
+                          <td> <img src="{{asset('/images/document/'.$pilots->pilotdoc->other_doc_back_image)}}" alt="Park" style="width:30%"></td> -->
+
+                          <td> <img src="{{$pilots->pilotdoc->AADHAAR_front_image}}" alt="Park" style="width:100%"></td>
+                          <td> <img src="{{$pilots->pilotdoc->AADHAAR_back_image}}" alt="Park" style="width:100%"></td>
 
 <!--                         
                           <td>  {{ $pilots->pilotdoc->other_doc_front_image}}</td>
                           <td>  {{ $pilots->pilotdoc->other_doc_back_image}}</td> -->
-                          <td>  {{ $pilots->pilotdoc->other_doc_number}}</td>
+                          <td>  {{ $pilots->pilotdoc->AADHAAR_number}}</td>
 
                          
                       </tr>
+
+                      
+                      <tr>
+                      <td> PAN Card </td>
+                      <td></td>
+                      <td><td>
+                      </tr>
+
+
+                      <tr>
+
+                          <td> <img src="{{$pilots->pilotdoc->PAN_CARD_front_image}}" alt="Park" style="width:100%"></td>
+                          @isset($pilots->pilotdoc->PAN_CARD_back_image)
+                            <td> <img src="{{$pilots->pilotdoc->PAN_CARD_back_image}}" alt="Park" style="width:100%"></td>
+                          @else
+                          <td> <img src="{{asset('images/document/inf2.jpg')}}" alt="Park" style="width:100%"></td>
+                          @endisset
+
+                          <td>  {{ $pilots->pilotdoc->PAN_CARD_number}}</td>
+
+                         
+                      </tr>
+
                       <tr>
                           <td class="ft-200" style="width: 250px;">Verification Status</td>
                           <td> @php

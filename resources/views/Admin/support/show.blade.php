@@ -1,4 +1,4 @@
-@extends('admin.adminmain')
+@extends('Admin.adminmain')
  @section('title',"Support")
  @section('stylesheets')
 

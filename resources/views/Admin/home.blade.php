@@ -1,5 +1,5 @@
     
- @extends('admin.adminmain')
+ @extends('Admin.adminmain')
  @section('title',"Admin")
  @section('content')
 
