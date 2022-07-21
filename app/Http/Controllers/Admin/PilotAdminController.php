@@ -24,7 +24,7 @@ class PilotAdminController extends Controller
     {
          $pilot=Pilot::all();
        
-        return view('admin.pilot.index')->withPilots($pilot);
+        return view('Admin.pilot.index')->withPilots($pilot);
     }
 
     /**
@@ -59,7 +59,7 @@ class PilotAdminController extends Controller
         $pilot = Pilot::findOrFail($id);
         $profile = Pilot::all();
   //dd($pilot->pilotdet);
-         return view('admin.pilot.show')->withPilots($pilot);
+         return view('Admin.pilot.show')->withPilots($pilot);
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends('admin.adminmain')
+@extends('Admin.adminmain')
  @section('title',"pilot")
  @section('stylesheets')
 
@@ -60,7 +60,7 @@
                      <td>{{$pilot->name}}</td>
                      <td>{{$pilot->email}}</td>
                      <td>{{$pilot->mobile}}</td>
-                    
+                     <td>{{$pilot->created_at->format('d-m-Y')}}</td>            
                       <td>
                           <a href="{{route('pilot.show',$pilot->id)}}" data-toggle="tooltip" title="banner Details" class="btn">
                           <i class="fas fa-eye"></i> </a> 

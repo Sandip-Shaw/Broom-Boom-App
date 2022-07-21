@@ -37,7 +37,7 @@ class AdminController extends Controller
      //  $var['contact']=$contacts;
       //  $var['blog']=$blogs;
        // $var['course']=count($course);
-        return view('admin.home');
+        return view('Admin.home');
         //->withVar($var);
     }
 

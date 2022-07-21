@@ -68,7 +68,7 @@ class TicketResponseAdminController extends Controller
     {
         // $ticket=TicketResponse::find($response_id);
         // //dd( $image);
-        // return view('admin.welcome_notes.show')->withTicket($ticket);
+        // return view('Admin.welcome_notes.show')->withTicket($ticket);
     }
 
     /**
