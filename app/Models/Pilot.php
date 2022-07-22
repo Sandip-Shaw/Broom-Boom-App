@@ -9,7 +9,7 @@ class Pilot extends Model
 {
     use HasFactory;
 
-    protected $table = 'pilots';
+    protected $table = 'pilot';
 
     public function pilotdet(){
 

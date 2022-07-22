@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
-use App\Models\Service;
-use App\Models\Blog;
-
+use App\Models\PilotDocument;
+use App\Models\Pilot;
+use Carbon\Carbon;
 
 
 
@@ -25,20 +25,23 @@ class AdminController extends Controller
     public function index()
     {
          //dd("admin");
-      //  $contacts=Contact::count();
-      //  $services=Service::count();
-      //  $blogs=Blog::count();
+      
       //  $course=Course::select('name')->groupBy('name')->get();
+        $pilot= Pilot::whereDate('created_at', Carbon::today())->get();
+        $verification_approval = PilotDocument::where('verification_status', 0)->get();
+       //dd(count($verification_approval));
+    //    $total_pilot= Pilot::count();
+    //     dd($total_pilot);
 
-        // dd(count($course));
+        $var['pilot']=count($pilot);
+        $var['verification_status']=count($verification_approval);
 
-
-     //   $var['service']=$services;
+       // dd($verification_approval);
      //  $var['contact']=$contacts;
       //  $var['blog']=$blogs;
        // $var['course']=count($course);
-        return view('Admin.home');
-        //->withVar($var);
+        return view('Admin.home')->withVar($var);
+        
     }
 
     // public function logout( Request $request ){

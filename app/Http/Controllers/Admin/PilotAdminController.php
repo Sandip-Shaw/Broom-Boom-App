@@ -22,7 +22,7 @@ class PilotAdminController extends Controller
      */
     public function index()
     {
-         $pilot=Pilot::all();
+         $pilot=Pilot::where('profile_upload_status',1)->get();
        
         return view('Admin.pilot.index')->withPilots($pilot);
     }
