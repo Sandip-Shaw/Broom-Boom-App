@@ -168,10 +168,10 @@
                   <table id="dataTable" class="table table-details">
                     <tbody>
                     <tr>
-                          <td class="ft-200" style="width: 250px;">Vehical Type</td>
+                          <td class="ft-200" style="width: 250px;">Vehicle Type</td>
                           <td> 
-
-                         {{ $pilots->pilotdoc->vehicle_type}}
+                         
+                         {{$pilots->pilotdoc->vehicle_type}}
                           
                           </td>
                           <td>
