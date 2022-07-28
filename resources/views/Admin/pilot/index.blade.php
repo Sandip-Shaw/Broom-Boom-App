@@ -30,7 +30,8 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable"  width="100%" cellspacing="0">
+                <!-- data-paging='false' -->
                   <thead>
                     <tr>
                      
@@ -39,6 +40,8 @@
                       
                       <th>Mobile</th>         
                       <th>Added On</th>
+                      <th>Action</th>
+
                    
                     </tr>
                   </thead>
@@ -50,30 +53,25 @@
                       
                       <th>Mobile</th>                  
                       <th>Added On</th>
+                      <th>Action</th>
+
                      
                     </tr>
                   </tfoot>
                   <tbody>
                   @foreach($pilots as $pilot)
                   <tr>
-                
-                     <td>{{$pilot->name}}</td>
-                     <td>{{$pilot->email}}</td>
-                     <td>{{$pilot->mobile}}</td>
-                     <td>{{$pilot->created_at->format('d-m-Y')}}</td>            
-                      <td>
-                          <a href="{{route('pilot.show',$pilot->id)}}" data-toggle="tooltip" title="banner Details" class="btn">
-                          <i class="fas fa-eye"></i> </a> 
-   
-                     </td>
-                   
-                    
+                    <td>{{$pilot->name}}</td>
+                    <td>{{$pilot->email}}</td>
+                    <td>{{$pilot->mobile}}</td>
+                    <td>{{$pilot->created_at->format('d-m-Y')}}</td>            
+                    <td>
+                      <a href="{{route('pilot.show',$pilot->id)}}" data-toggle="tooltip" title="banner Details" class="btn">
+                      <i class="fas fa-eye"></i> </a> 
+                    </td>        
                   </tr>
                   @endforeach 
                   
-                   
-                
-                    
                   </tbody>
                 </table>
               </div>
@@ -84,6 +82,7 @@
         <!-- /.container-fluid -->
 
       </div>
+
 
                       
 <div class="modal fade" id="formConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -119,12 +118,21 @@
 <script type="text/javascript">
   $(document).ready(function(){
 
+
+//   $(document).ready(function () {
+//     $('#DataTable').DataTable({
+//         order: [[4, 'asc']],
+//     });
+// });
      
+  // $('#DataTable').dataTable({
+  //     "pagination": false
+  // });
+
+
   $('.formConfirm').on('click', function(e) {
-    //alert();
         e.preventDefault();
         var el = $(this);
-        //alert(el);
         var title = el.attr('data-title');
         var msg = el.attr('data-message');
         var dataForm = el.attr('data-form');
@@ -138,7 +146,6 @@
   });
   $('#formConfirm').on('click', '#frm_submit', function(e) {
         var id = $(this).attr('data-form');
-        //alert(id);
         $(id).submit();
   });
 });
