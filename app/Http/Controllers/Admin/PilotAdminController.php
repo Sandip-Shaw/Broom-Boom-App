@@ -22,7 +22,7 @@ class PilotAdminController extends Controller
      */
     public function index()
     {
-         $pilot=Pilot::where('profile_upload_status',1)->get();
+         $pilot=Pilot::orderBy('created_at', 'asc')->get();
        
         return view('Admin.pilot.index')->withPilots($pilot);
     }
@@ -84,8 +84,8 @@ class PilotAdminController extends Controller
     {
        // dd($request);
         $pilot=PilotDocument::find($id);
-       // dd($pilot);
         $pilot->verification_status = $request->verification_status;
+        $pilot->failed_reasons = $request->fail_msg;
         $pilot->save();
 
         session()->flash('success', 'Verification Status has been Updated !!');

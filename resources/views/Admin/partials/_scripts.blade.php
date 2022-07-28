@@ -3,6 +3,7 @@
 
   <!-- Core plugin JavaScript-->
   <script src="{{asset('admin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Custom scripts for all pages-->
   <script src="{{asset('admin/js/sb-admin-2.min.js')}}"></script>

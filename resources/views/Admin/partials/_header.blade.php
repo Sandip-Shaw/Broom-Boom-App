@@ -14,5 +14,4 @@
   <!-- Custom styles for this template-->
   <link href="{{asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
-  
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">  
