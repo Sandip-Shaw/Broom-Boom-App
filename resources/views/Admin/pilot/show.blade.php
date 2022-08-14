@@ -496,7 +496,7 @@
                             {!!Form::select('verification_status', array('1' => 'Active', '0' => 'Pending', '-1'=>'Failed'),$pilots->pilotdoc->verification_status,['id'=>'verification_status'])!!}
                             <br>
                             <div id="failed-msg-section">
-                              <label for="fail_msg">Failure message(Add messages seperated by | ):</label>
+                              <label for="fail_msg">Failure message:</label>
                               <br>
                               <textarea id="fail_msg" name="fail_msg" rows="4" cols="50">
                                 @isset($pilots->pilotdoc->failed_reasons)
@@ -546,22 +546,22 @@
 <script>
    $(document).ready(function(){
 
-                if($('#verification_status').find(":selected").val()==-1){
-                  $('#failed-msg-section').show();
-                }
-                else{
-                  $('#failed-msg-section').hide();
-                }
+                // if($('#verification_status').find(":selected").val()==-1){
+                //   $('#failed-msg-section').show();
+                // }
+                // else{
+                //   $('#failed-msg-section').hide();
+                // }
 
-                 $('#verification_status').on('change', function() {
-                 var status=$(this).find(":selected").val();
-                    if(status==-1){
-                      $('#failed-msg-section').show();
-                    }
-                    else {
-                      $('#failed-msg-section').hide();
-                    }
-                });
+                //  $('#verification_status').on('change', function() {
+                //  var status=$(this).find(":selected").val();
+                //     if(status==-1){
+                //       $('#failed-msg-section').show();
+                //     }
+                //     else {
+                //       $('#failed-msg-section').hide();
+                //     }
+                // });
 
 
                  $('#Fullscreen').css('height', $(document).outerWidth() + 'px');
